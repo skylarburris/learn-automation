@@ -4,10 +4,10 @@ var $driver = webdriver;
 var until = webdriver.until;
 var assert = require('assert');
 var By = $driver.By;
-$browser.manager();
-$browser.manager().timeout().implicitlyWait(10000);
+$browser.manage();
+// end of the build
 
 
-$broswer.get('https://www.google.com/')
-
-$broswer.quit();
+$browser.get('https://www.google.com').then(function(){
+ return $browser.quit();
+})
